@@ -55,11 +55,6 @@
             android:layout_height="wrap_content"
             android:text="2018 11,12月發票" />
 
-        <Button
-            android:id="@+id/AtoBbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="開始對獎" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
