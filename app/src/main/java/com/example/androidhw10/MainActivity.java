@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-int Month;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,48 +25,42 @@ int Month;
         onetwobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Month=1;
-               sendtob();
+               sendtob(1);
             }
         });
         threefourbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Month=3;
-                sendtob();
+                sendtob(3);
             }
         });
         fivesixbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Month=5;
-                sendtob();
+                sendtob(5);
             }
         });
         seveneightbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Month=7;
-                sendtob();
+                sendtob(7);
             }
         });
         ninetenbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Month=9;
-                sendtob();
+                sendtob(9);
             }
         });
         eleventwelvebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Month=11;
-                sendtob();
+                sendtob(11);
             }
         });
 
     }
-    public  void sendtob(){
+    public  void sendtob(int Month){
         Intent sendatob=new Intent(MainActivity.this,Bpage.class);
         sendatob.putExtra("month",Month);
         startActivity(sendatob);
