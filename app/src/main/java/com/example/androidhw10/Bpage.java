@@ -20,12 +20,11 @@ public class Bpage extends AppCompatActivity {
         Intent Adata = getIntent();
 
         Boolean CBbtn;
-        Intent CpageBack =getIntent();
-        CBbtn=CpageBack.getBooleanExtra("CBclick",false);
-        if(CBbtn==true){
-            ApageChoose=CpageBack.getIntExtra("CBmonth",0);
-        }
-        else {
+        Intent CpageBack = getIntent();
+        CBbtn = CpageBack.getBooleanExtra("CBclick", false);
+        if (CBbtn == true) {
+            ApageChoose = CpageBack.getIntExtra("CBmonth", 0);
+        } else {
             ApageChoose = Adata.getIntExtra("month", 0);
         }
 
@@ -94,7 +93,7 @@ public class Bpage extends AppCompatActivity {
         BtoAbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent BtoA=new Intent(Bpage.this,MainActivity.class);
+                Intent BtoA = new Intent(Bpage.this, MainActivity.class);
                 startActivity(BtoA);
             }
         });
@@ -118,27 +117,27 @@ public class Bpage extends AppCompatActivity {
         if (sa1.contains(inputnum.getText().toString())) {
             bonus.putExtra("getprize", "恭喜您中了1000萬元!");
             startActivity(bonus);
-        } else if (sa2.contains( inputnum.getText().toString())) {
+        } else if (sa2.contains(inputnum.getText().toString())) {
             bonus.putExtra("getprize", "恭喜您中了200萬元!");
             startActivity(bonus);
-        } else if (fp1.contains(inputnum.getText().toString()) || fp2.contains( inputnum.getText().toString()) || fp3.contains(inputnum.getText().toString())) {
+        } else if (fp1.contains(inputnum.getText().toString()) || fp2.contains(inputnum.getText().toString()) || fp3.contains(inputnum.getText().toString())) {
             bonus.putExtra("getprize", "恭喜您中了20萬元!");
             startActivity(bonus);
-        } else if ((fp1.subSequence(1,8) == inputnum.getText().toString().subSequence(1, 8) || fp2.subSequence(1,8) == inputnum.getText().toString().subSequence(1, 8) || fp3.subSequence(1,8) == inputnum.getText().toString().subSequence(1, 8))) {
+        } else if ((fp1.substring(1, 7).equals(inputnum.getText().toString().substring(1, 7)) || fp2.substring(1, 7).equals(inputnum.getText().toString().substring(1, 7)) || fp3.substring(1, 7).equals(inputnum.getText().toString().substring(1, 7)))) {
             bonus.putExtra("getprize", "恭喜您中了4萬元!");
             startActivity(bonus);
 
-        } else if ((fp1.subSequence(2,8) == inputnum.getText().toString().subSequence(2, 8) || fp2.subSequence(2,8) == inputnum.getText().toString().subSequence(2, 8) || fp3.subSequence(2,8) == inputnum.getText().toString().subSequence(2, 8))) {
+        } else if ((fp1.substring(2, 7).equals(inputnum.getText().toString().substring(2, 7)) || fp2.substring(2, 7).equals(inputnum.getText().toString().substring(2, 7)) || fp3.substring(2, 7).equals(inputnum.getText().toString().substring(2, 7)))) {
             bonus.putExtra("getprize", "恭喜您中了1萬元!");
             startActivity(bonus);
-        } else if ((fp1.subSequence(3,8) == inputnum.getText().toString().subSequence(3, 8) || fp2.subSequence(3,8) == inputnum.getText().toString().subSequence(3, 8) || fp3.subSequence(3,8) == inputnum.getText().toString().subSequence(3, 8))) {
+        } else if ((fp1.substring(3, 7).equals(inputnum.getText().toString().substring(3, 7)) || fp2.substring(3, 7).equals(inputnum.getText().toString().substring(3, 7)) || fp3.substring(3, 7).equals(inputnum.getText().toString().substring(3, 7)))) {
             bonus.putExtra("getprize", "恭喜您中了4千元!");
             startActivity(bonus);
-        } else if ((fp1.subSequence(4,8) == inputnum.getText().toString().subSequence(4, 8) || fp2.subSequence(4,8) == inputnum.getText().toString().subSequence(4, 8) || fp3.subSequence(4,8) == inputnum.getText().toString().subSequence(4, 8))) {
+        } else if ((fp1.substring(4, 7).equals(inputnum.getText().toString().substring(4, 7)) || fp2.substring(4, 7).equals(inputnum.getText().toString().substring(4, 7)) || fp3.substring(4, 7).equals(inputnum.getText().toString().substring(4, 7)))) {
             bonus.putExtra("getprize", "恭喜您中了1000元!");
             startActivity(bonus);
-        } else if (fp1.subSequence(5,8) == inputnum.getText().toString().subSequence(5, 8) || fp2.subSequence(5,8) == inputnum.getText().toString().subSequence(5, 8) || fp3.subSequence(5,8) == inputnum.getText().toString().subSequence(5, 8) || plus1.subSequence(0,3) == inputnum.getText().toString().subSequence(5, 8) || plus2.subSequence(0,3) == inputnum.getText().toString().subSequence(5, 8) || plus3.subSequence(0,3) == inputnum.getText().toString().subSequence(5, 8))
+        } else if (fp1.substring(5, 7).equals(inputnum.getText().toString().substring(5, 7)) || fp2.substring(5, 7).equals(inputnum.getText().toString().substring(5, 7)) || fp3.substring(5, 7).equals(inputnum.getText().toString().substring(5, 7)) || plus1.substring(0, 2).equals(inputnum.getText().toString().substring(5, 7)) || plus2.substring(0, 3).equals(inputnum.getText().toString().substring(5, 7)) || plus3.substring(0, 3).equals(inputnum.getText().toString().substring(5, 7)))
             bonus.putExtra("getprize", "恭喜您中了200元!");
-            startActivity(bonus);
+        startActivity(bonus);
     }
 }
