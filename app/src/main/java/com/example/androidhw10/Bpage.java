@@ -11,12 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Bpage extends AppCompatActivity {
+    int ApageChoose;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bpage);
 
-        final int ApageChoose;
+
         Intent Adata = getIntent();
 
         Boolean CBbtn;
@@ -112,8 +114,8 @@ public class Bpage extends AppCompatActivity {
 
     public void result(String sa1, String sa2, String fp1, String fp2, String fp3, String plus1, String plus2, String plus3) {
         EditText inputnum = (EditText) findViewById(R.id.inputnum);
-
         Intent bonus = new Intent(Bpage.this, Cpage.class);
+        bonus.putExtra("month",ApageChoose);
         if (sa1.contains(inputnum.getText().toString())) {
             bonus.putExtra("getprize", "恭喜您中了1000萬元!");
             startActivity(bonus);
